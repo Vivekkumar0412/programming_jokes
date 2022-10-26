@@ -5,6 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>joke</title>
+    <style>
+        *{
+            background: linear-gradient(to right,#cc2b5e , #753a88);
+        }
+        h1{
+            text-align: center;
+            color: white;
+        }#btn{
+            display: block;
+            /* text-align: center; */
+            background: linear-gradient(#bdc3c7 , #2c3e50);
+            margin:auto;
+            cursor: pointer;
+            padding: 30px 80px;
+            color: yellow;
+            border-radius: 10px;
+            font-size: 25px;
+        }
+    </style>
 </head>
 <body>
     <h1 id="h"></h1>
@@ -24,6 +43,7 @@
                 return data.json()
             }).then((joke)=>{
                 h.innerText = joke[0]["setup"];
+                // document.write(joke[0]["setup"]);
             })
         }
 
