@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>joke</title>
+</head>
+<body>
+    <h1 id="h"></h1>
+    <button id="btn">GET JOKE</button>
+
+
+    <script>
+        let h = document.getElementById("h");
+        let btn = document.getElementById("btn");
+
+        // console.log(h)
+        // console.log(btn)
+
+        let calljoke = ()=>{
+            fetch('https://official-joke-api.appspot.com/jokes/programming/ten')
+            .then((data)=>{
+                return data.json()
+            }).then((joke)=>{
+                h.innerText = joke[0]["setup"];
+            })
+        }
+
+        btn.addEventListener('click',calljoke);
+    </script>
+</body>
+</html>
